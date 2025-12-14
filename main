@@ -1,1 +1,51 @@
-print ("hi")
+def show_menu():
+    print("=== GAME MENU ===")
+    print("1. Play")
+    print("2. Settings")
+    print("3. Exit")
+
+def choose_difficulty():
+    print("\nChoose difficulty:")
+    print("1. Easy")
+    print("2. Normal")
+    print("3. Hard")
+    choice = input("Your choice: ")
+
+    if choice == "1":
+        return "Easy"
+    elif choice == "2":
+        return "Normal"
+    elif choice == "3":
+        return "Hard"
+    else:
+        print("Invalid choice!")
+        return choose_difficulty()
+
+def settings_menu():
+    print("\n=== SETTINGS ===")
+    print("1. Graphics")
+    print("2. Sound")
+    print("3. Controls")
+    print("4. Languages")
+    print("5. Back")
+
+def main():
+    while True:
+        show_menu()
+        option = input("Choose option: ")
+
+        if option == "1":
+            difficulty = choose_difficulty()
+            print(f"\nStarting game on {difficulty} difficulty...\n")
+
+        elif option == "2":
+            settings_menu()
+
+        elif option == "3":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice, try again.\n")
+
+main()
